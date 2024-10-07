@@ -1,0 +1,53 @@
+{
+  "name": "assets",
+  "version": "1.0.0",
+  "productName": "AssetManager",
+  "description": "App for managing assets",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --linux deb"
+  },
+  "author": {
+    "name": "Stephanie Shawa",
+    "email": "sshawa48@gmail.com"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "chart.js": "^4.4.4",
+    "jspdf": "^2.5.2",
+    "jspdf-autotable": "^3.8.3",
+    "knex": "^3.1.0",
+    "sqlite3": "^5.1.7",
+    "toastify-js": "^1.12.0"
+  },
+"devDependencies": {
+  "electron": "^31.0.2",
+  "electron-builder": "^24.13.3",
+  "electron-installer-debian": "^3.2.0"
+},
+
+"homepage": "https://github.com/Tephyny/Assets",
+"build": {
+  "appId": "com.yourcompany.asset6",
+  "productName": "UAS Assets",
+  "directories": {
+    "output": "dist"
+  },
+  "linux": {
+    "target": [
+      "deb"
+    ],
+    "category": "Utility",
+    "icon": "resources/icon/desk.png",
+    "maintainer": null
+  },
+  "files": [
+    "dist/**/*",
+    "main.js",
+    "database.sqlite",
+    "package.json",
+    "resources/**/*"
+  ]
+}
+}
