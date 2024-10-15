@@ -2,7 +2,6 @@ const { ipcRenderer } = require('electron');
 const Toastify = require('toastify-js');
 const { jsPDF } = window.jspdf;
 
-// Common functions
 const showToast = (message, type) => {
     Toastify({
         text: message,
@@ -106,7 +105,6 @@ const assetStrategies = {
         editPage: 'edit-assets.html'
     },
 
-    // ... other asset strategies ...
 };
 
 // Load assets for different types
@@ -318,7 +316,7 @@ function exportToPdf(type) {
         });
         
         doc.setFontSize(16);
-        doc.text(`UAS ${capitalizeFirstLetter(type)} List`, 14, 15);
+        doc.text(`${capitalizeFirstLetter(type)} List`, 14, 15);
         
         const inputModal = document.getElementById(`inputModal-${type}`);
         const savePdfBtn = document.getElementById(`savePdfBtn-${type}`);
@@ -342,7 +340,7 @@ function exportToPdf(type) {
         } else {
             // If modal elements don't exist, use a default filename
             console.warn(`Modal elements not found for ${type}. Using default filename.`);
-            const defaultFileName = `UAS_${capitalizeFirstLetter(type)}_List.pdf`;
+            const defaultFileName = `${capitalizeFirstLetter(type)} List.pdf`;
             savePDF(doc, defaultFileName, type);
         }
         
